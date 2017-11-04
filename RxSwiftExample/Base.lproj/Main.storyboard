@@ -59,21 +59,21 @@
             </objects>
             <point key="canvasLocation" x="1468" y="31.934032983508249"/>
         </scene>
-        <!--Item-->
+        <!--Circle-->
         <scene sceneID="Bf1-0k-G9W">
             <objects>
-                <viewController id="256-dg-GUw" sceneMemberID="viewController">
+                <viewController id="256-dg-GUw" customClass="CircleViewController" customModule="RxSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uMY-gI-dG3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="jky-pd-4zh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gUX-ln-W70"/>
+                    <tabBarItem key="tabBarItem" title="Circle" id="gUX-ln-W70"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eM-2C-ydQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="357"/>
+            <point key="canvasLocation" x="1468" y="809"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nnP-Pu-HZt">
@@ -81,6 +81,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FGA-tD-lTz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UAP-PK-t3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

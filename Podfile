@@ -8,6 +8,7 @@ target 'RxSwiftExample' do
   # Pods for RxSwiftExample
       pod 'RxSwift',    '~> 4.0'
       pod 'RxCocoa',    '~> 4.0'
+      pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
   target 'RxSwiftExampleTests' do
     inherit! :search_paths

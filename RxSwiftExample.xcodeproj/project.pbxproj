@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AAC3B7C1FADECA5006EDF22 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC3B7B1FADECA5006EDF22 /* CircleViewController.swift */; };
 		3AAE1F7D1FA5A71300336743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE1F7C1FA5A71300336743 /* AppDelegate.swift */; };
 		3AAE1F7F1FA5A71300336743 /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE1F7E1FA5A71300336743 /* CitySearchViewController.swift */; };
 		3AAE1F821FA5A71300336743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAE1F801FA5A71300336743 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0AAA216801D2749A78C51915 /* Pods-RxSwiftExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftExampleTests/Pods-RxSwiftExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B4C1FD887D1DE8E7F20B3F7 /* Pods-RxSwiftExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftExampleUITests/Pods-RxSwiftExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3AAC3B7B1FADECA5006EDF22 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		3AAE1F791FA5A71300336743 /* RxSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAE1F7C1FA5A71300336743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AAE1F7E1FA5A71300336743 /* CitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AAC3B791FADEC76006EDF22 /* CitySearch */ = {
+			isa = PBXGroup;
+			children = (
+				3AAE1F7E1FA5A71300336743 /* CitySearchViewController.swift */,
+			);
+			path = CitySearch;
+			sourceTree = "<group>";
+		};
+		3AAC3B7A1FADEC85006EDF22 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				3AAC3B7B1FADECA5006EDF22 /* CircleViewController.swift */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
 		3AAE1F701FA5A71300336743 = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +132,9 @@
 		3AAE1F7B1FA5A71300336743 /* RxSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
+				3AAC3B7A1FADEC85006EDF22 /* Circle */,
+				3AAC3B791FADEC76006EDF22 /* CitySearch */,
 				3AAE1F7C1FA5A71300336743 /* AppDelegate.swift */,
-				3AAE1F7E1FA5A71300336743 /* CitySearchViewController.swift */,
 				3AAE1F801FA5A71300336743 /* Main.storyboard */,
 				3AAE1F831FA5A71300336743 /* Assets.xcassets */,
 				3AAE1F851FA5A71300336743 /* LaunchScreen.storyboard */,
@@ -311,11 +330,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -462,6 +483,7 @@
 			files = (
 				3AAE1F7F1FA5A71300336743 /* CitySearchViewController.swift in Sources */,
 				3AAE1F7D1FA5A71300336743 /* AppDelegate.swift in Sources */,
+				3AAC3B7C1FADECA5006EDF22 /* CircleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
