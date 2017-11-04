@@ -10,17 +10,19 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class ViewController: UIViewController, UITableViewDataSource {
+class CitySearchViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     
-    var shownCities = [String]()
+    
     let allCities = ["Seoul", "New York", "London", "Oslo", "Warsaw", "Berlin", "Praga"]
+    var shownCities = [String]()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shownCities = allCities
         tableView.dataSource = self
         
         searchBar
@@ -28,10 +30,8 @@ class ViewController: UIViewController, UITableViewDataSource {
             .orEmpty
             .debounce(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .filter({ !$0.isEmpty} )
             .subscribe(onNext: { [unowned self] query in
-                self.shownCities = self.allCities.filter { $0.hasPrefix(query) }
-                self.tableView.reloadData()
+                searchCity(query)
                 }, onError: nil, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
     }
@@ -45,6 +45,16 @@ class ViewController: UIViewController, UITableViewDataSource {
         cell.textLabel?.text = shownCities[indexPath.row]
         
         return cell
+    }
+    
+    private func searchCity(inputText: String) {
+        if inputText.isEmpty {
+            shownCities = allCities
+        }
+        else {
+            shownCities = allCities.filter { $0.hasPrefix(inputText) }
+            tableView.reloadData()
+        }
     }
 }
 
