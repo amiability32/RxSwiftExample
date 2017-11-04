@@ -28,10 +28,16 @@ class CitySearchViewController: UIViewController, UITableViewDataSource {
         searchBar
             .rx.text
             .orEmpty
-            .debounce(0.5, scheduler: MainScheduler.instance)
+            .debounce(0.2, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(onNext: { [unowned self] query in
-                searchCity(query)
+                if query.isEmpty {
+                    self.shownCities = self.allCities
+                }
+                else {
+                    self.shownCities = self.allCities.filter { $0.hasPrefix(query) }
+                }
+                self.tableView.reloadData()
                 }, onError: nil, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
     }
@@ -45,16 +51,6 @@ class CitySearchViewController: UIViewController, UITableViewDataSource {
         cell.textLabel?.text = shownCities[indexPath.row]
         
         return cell
-    }
-    
-    private func searchCity(inputText: String) {
-        if inputText.isEmpty {
-            shownCities = allCities
-        }
-        else {
-            shownCities = allCities.filter { $0.hasPrefix(inputText) }
-            tableView.reloadData()
-        }
     }
 }
 
